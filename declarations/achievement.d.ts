@@ -3,13 +3,11 @@
 /// <reference path="global.d.ts" />
 /// <reference path="unit.d.ts" />
 
-declare namespace WoWAPI {
-    /**
-     * Achievement links are returned by GetAchievementLink().
-     * @example |cffffff00|Hachievement:2186:00000000002FDDE9:1:12:19:8:4294967295:4294967295:4294967295:4294967295|h[The Immortal]|h|r
-     */
-    type AchievementLink = Hyperlink;
-}
+/**
+ * Achievement links are returned by GetAchievementLink().
+ * @example |cffffff00|Hachievement:2186:00000000002FDDE9:1:12:19:8:4294967295:4294967295:4294967295:4294967295|h[The Immortal]|h|r
+ */
+declare type AchivementLink = WowHyperlink;
 
 /**
  * Marks an achievement for tracking in the WatchFrame.
@@ -90,7 +88,7 @@ declare function GetAchievementInfo(categoryId: number, index: number): [number,
  * @param achivementId The ID of the Achievement
  * @see https://wow.gamepedia.com/API_GetAchievementLink
  */
-declare function GetAchievementLink(achivementId: number): WoWAPI.AchievementLink;
+declare function GetAchievementLink(achivementId: number): AchivementLink;
 
 /**
  * Returns the number of criteria for the given Achievement
@@ -196,7 +194,7 @@ declare function GetPreviousAchievement(achivementId: number): number | null;
  * @returns The value of the requested Statistic
  * @see https://wow.gamepedia.com/API_GetStatistic
  */
-declare function GetStatistic(achievementId: number): WoWAPI.UnknownStringKeyTable;
+declare function GetStatistic(achievementId: number): WowUnknownStringKeyTable;
 
 /**
  * Returns a table of achievement categories
@@ -204,7 +202,7 @@ declare function GetStatistic(achievementId: number): WoWAPI.UnknownStringKeyTab
  * @returns list of all the categories
  * @see https://wow.gamepedia.com/API_GetStatisticsCategoryList
  */
-declare function GetStatisticsCategoryList(): WoWAPI.UnknownNumberKeyTable;
+declare function GetStatisticsCategoryList(): WowUnknownNumberKeyTable;
 
 /**
  * Returns the total number of Achievement Points earned
@@ -240,7 +238,7 @@ declare function GetNumTrackedAchievements(): number;
  * @see https://wow.gamepedia.com/API_IsAchievementEligible
  * @since 4.0.1
  */
-declare function IsAchievementEligible(achievementId: number): WoWAPI.Unknown;
+declare function IsAchievementEligible(achievementId: number): WowUnknown;
 
 /**
  * Un-marks an achievement for tracking in the WatchFrame
@@ -260,7 +258,7 @@ declare function RemoveTrackedAchievement(achievementId: number): void;
  * @see https://wow.gamepedia.com/API_SetAchievementComparisonUnit
  * @event INSPECT_ACHIEVEMENT_READY
  */
-declare function SetAchievementComparisonUnit(unit: WoWAPI.UnitId): boolean;
+declare function SetAchievementComparisonUnit(unit: WowUnitId): boolean;
 
 /**
  * Starts a search for achievements containing the specified text

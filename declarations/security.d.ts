@@ -8,7 +8,7 @@
  * @returns 1 if the current path is secure (and able to call protected functions), nil otherwise.
  * @see https://wow.gamepedia.com/API_issecure
  */
-declare function issecure(): WoWAPI.Flag;
+declare function issecure(): WowFlag;
 
 /**
  * Taints the current execution path.
