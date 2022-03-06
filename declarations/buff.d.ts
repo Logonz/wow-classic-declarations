@@ -46,7 +46,7 @@ declare function CancelItemTempEnchantment(weaponHand: WowBuffWeaponHandType): v
  * @see https://wow.gamepedia.com/API_GetWeaponEnchantInfo
  * @tupleReturn
  */
-declare function GetWeaponEnchantInfo(): [boolean, number, number, number, boolean, number, number, number];
+declare function GetWeaponEnchantInfo(): LuaMultiReturn<[boolean, number, number, number, boolean, number, number, number]>;
 
 /**
  * Returns information about a buff or debuff on the specified unit
@@ -57,7 +57,7 @@ declare function GetWeaponEnchantInfo(): [boolean, number, number, number, boole
  * @tupleReturn
  */
 // tslint:disable-next-line max-line-length
-declare function UnitAura(unitId: WowUnitId, index: number, filter?: WowBuffFilterType & string): [string, WowTexturePath, number, WowDebuffType, number, number, WowUnitId, boolean, boolean, number, boolean, boolean, boolean, boolean, number];
+declare function UnitAura(unitId: WowUnitId, index: number, filter?: WowBuffFilterType & string): LuaMultiReturn<[string, WowTexturePath, number, WowDebuffType, number, number, WowUnitId, boolean, boolean, number, boolean, boolean, boolean, boolean, number]>;
 
 /**
  * Retrieve info about a certain buff on a certain unit
@@ -68,7 +68,7 @@ declare function UnitAura(unitId: WowUnitId, index: number, filter?: WowBuffFilt
  * @tupleReturn
  */
 // tslint:disable-next-line max-line-length
-declare function UnitBuff(unitId: WowUnitId, index: number, filter?: WowBuffFilterType & string): [string, WowTexturePath, number, WowDebuffType, number, number, WowUnitId, boolean, boolean, number, boolean, boolean, boolean, number, number, number, number];
+declare function UnitBuff(unitId: WowUnitId, index: number, filter?: WowBuffFilterType & string): LuaMultiReturn<[string, WowTexturePath, number, WowDebuffType, number, number, WowUnitId, boolean, boolean, number, boolean, boolean, boolean, number, number, number, number]>;
 
 /**
  * Retrieve info about a specified debuff on a certain unit
@@ -79,4 +79,4 @@ declare function UnitBuff(unitId: WowUnitId, index: number, filter?: WowBuffFilt
  * @tupleReturn
  */
 // tslint:disable-next-line max-line-length
-declare function UnitDebuff(unitId: WowUnitId, index: number, filter?: WowBuffFilterType & string): [string, WowTexturePath, number, WowDebuffType, number, number, WowUnitId, boolean, boolean, number, boolean, boolean, boolean, number, number, number, number];
+declare function UnitDebuff(unitId: WowUnitId, index: number, filter?: WowBuffFilterType & string): LuaMultiReturn<[string, WowTexturePath, number, WowDebuffType, number, number, WowUnitId, boolean, boolean, number, boolean, boolean, boolean, number, number, number, number]>;

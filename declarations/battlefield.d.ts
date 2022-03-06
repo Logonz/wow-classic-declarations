@@ -55,7 +55,7 @@ declare function GetBattlefieldEstimatedWaitTime(): number;
  * @see https://wow.gamepedia.com/API_GetBattlefieldFlagPosition
  * @tupleReturn
  */
-declare function GetBattlefieldFlagPosition(index: number): [number, number, string];
+declare function GetBattlefieldFlagPosition(index: number): LuaMultiReturn<[number, number, string]>;
 
 /**
  * Get shutdown timer for the battlefield instance
@@ -85,7 +85,7 @@ declare function GetBattlefieldPortExpiration(index: number): number;
  * @see https://wow.gamepedia.com/API_GetBattlefieldScore
  * @tupleReturn
  */
-declare function GetBattlefieldScore(playerIndex: number): [string, number, number, number, number, number, string, string, string, number, number, string];
+declare function GetBattlefieldScore(playerIndex: number): LuaMultiReturn<[string, number, number, number, number, number, string, string, string, number, number, string]>;
 
 /**
  * Get data from the custom battlefield scoreboard columns
@@ -103,7 +103,7 @@ declare function GetBattlefieldStatData(playerIndex: number, columnIndex: number
  * @see https://wow.gamepedia.com/API_GetBattlefieldStatInfo
  * @tupleReturn
  */
-declare function GetBattlefieldStatInfo(columnIndex: number): [string, string, string];
+declare function GetBattlefieldStatInfo(columnIndex: number): LuaMultiReturn<[string, string, string]>;
 
 /**
  * Get the status of the arena, battleground, or wargame that the player is either queued for or inside
@@ -112,7 +112,7 @@ declare function GetBattlefieldStatInfo(columnIndex: number): [string, string, s
  * @tupleReturn
  */
 // tslint:disable-next-line max-line-length
-declare function GetBattlefieldStatus(battlefieldIndex: number): [WowBattlefieldStatusType, string, WowBattlefieldTeamSize, number, WowUnknown, WowBattlefieldType, WowUnknown, WowUnitRoleType];
+declare function GetBattlefieldStatus(battlefieldIndex: number): LuaMultiReturn<[WowBattlefieldStatusType, string, WowBattlefieldTeamSize, number, WowUnknown, WowBattlefieldType, WowUnknown, WowUnitRoleType]>;
 
 /**
  * Get time this player's been in the queue in milliseconds
@@ -135,7 +135,7 @@ declare function GetBattlefieldWinner(): WowBattlefieldWinType;
  * @see https://wow.gamepedia.com/API_GetBattlegroundInfo
  * @tupleReturn
  */
-declare function GetBattlegroundInfo(battlegroundTypeIndex: number): [string, WowFlag, WowFlag, WowFlag, number, string];
+declare function GetBattlegroundInfo(battlegroundTypeIndex: number): LuaMultiReturn<[string, WowFlag, WowFlag, WowFlag, number, string]>;
 
 /**
  * Returns the max number of battlefields you can queue for
@@ -171,7 +171,7 @@ declare function GetNumWorldStateUI(): number;
  * @tupleReturn
  */
 // tslint:disable-next-line max-line-length
-declare function GetWorldStateUIInfo(worldUiStateIndex: number): [number, WowBattlefieldUiStateType, boolean, string, string, string, string, string, string, number, number, number];
+declare function GetWorldStateUIInfo(worldUiStateIndex: number): LuaMultiReturn<[number, WowBattlefieldUiStateType, boolean, string, string, string, string, string, string, number, number, number]>;
 
 /**
  * Queues the player, or the player's group, for a battlefield instance

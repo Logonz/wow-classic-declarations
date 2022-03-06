@@ -33,7 +33,7 @@ declare function GetCoinTextureString(amount: number, fontHeight?: number): stri
  * @since 3.0.2
  * @tupleReturn
  */
-declare function GetCurrencyInfo(currencyId: number): [string, number, WowTexturePath, number, number, number, boolean, ITEM_QUALITY];
+declare function GetCurrencyInfo(currencyId: number): LuaMultiReturn<[string, number, WowTexturePath, number, number, number, boolean, ITEM_QUALITY]>;
 
 /**
  * Retrieve Information about a currency at index including it's amount
@@ -46,7 +46,7 @@ declare function GetCurrencyInfo(currencyId: number): [string, number, WowTextur
  * @tupleReturn
  */
 // tslint:disable-next-line unified-signatures
-declare function GetCurrencyInfo(currencyLinkOrString: CurrencyLink | string): [string, number, WowTexturePath, number, number, number, boolean, ITEM_QUALITY];
+declare function GetCurrencyInfo(currencyLinkOrString: CurrencyLink | string): LuaMultiReturn<[string, number, WowTexturePath, number, number, number, boolean, ITEM_QUALITY]>;
 
 /**
  * Get the currencyLink for the specified currencyID
@@ -79,7 +79,7 @@ declare function GetCurrencyListSize(): number;
  * @tupleReturn
  */
 // tslint:disable-next-line max-line-length
-declare function GetCurrencyListInfo(currencyIndex: number): [string, boolean, boolean, boolean, boolean, number, WowTexturePath, number, number, number, WowUnknown, number];
+declare function GetCurrencyListInfo(currencyIndex: number): LuaMultiReturn<[string, boolean, boolean, boolean, boolean, number, WowTexturePath, number, number, number, WowUnknown, number]>;
 
 /**
  * Alters the expanded state of a currency list header.
@@ -119,7 +119,7 @@ declare function GetNumWatchedTokens(): number;
  * @since 3.0.2
  * @tupleReturn
  */
-declare function GetBackpackCurrencyInfo(watchedIndex: number): [string, number, WowTexturePath, number];
+declare function GetBackpackCurrencyInfo(watchedIndex: number): LuaMultiReturn<[string, number, WowTexturePath, number]>;
 
 /**
  * Alters the backpack tracking state of a currency

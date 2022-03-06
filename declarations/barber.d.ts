@@ -26,7 +26,7 @@ declare function CancelBarberShop(): void;
  * @see https://wow.gamepedia.com/API_GetBarberShopStyleInfo
  * @tupleReturn
  */
-declare function GetBarberShopStyleInfo(catId: number): [string, WowUnknown, WowUnknown, WowFlag];
+declare function GetBarberShopStyleInfo(catId: number): LuaMultiReturn<[string, WowUnknown, WowUnknown, WowFlag]>;
 
 /**
  * Returns the total costs of the cosmetic changes

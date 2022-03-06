@@ -147,7 +147,7 @@ declare interface WowUiObject {
      * Gets the children of a frame
      * @tupleReturn
      */
-    GetChildren(): [...WowUiObject[]];
+    GetChildren(): LuaMultiReturn<[...WowUiObject[]]>;
 
     /**
      * Returns whether insecure interaction with a widget is forbidden.
@@ -184,7 +184,7 @@ declare interface WowFontInstance extends WowUiObject {
      *  - **fontFlags**: See FontInstance:SetFont().
      * @tupleReturn
      */
-    GetFont(): [string, number, string];
+    GetFont(): LuaMultiReturn<[string, number, string]>;
 
     /**
      * Gets the text color of of a Font Instance.
@@ -195,7 +195,7 @@ declare interface WowFontInstance extends WowUiObject {
      *  a?: the alpha (opacity)
      * @tupleReturn
      */
-    GetTextColor(): [number, number, number, number?];
+    GetTextColor(): LuaMultiReturn<[number, number, number, number?]>;
 
     /**
      * The function is used to set the font to use for displaying text.
@@ -296,7 +296,7 @@ declare interface WowRegion extends WowUiObject {
      * @tupleReturn
      * @returns point, relativeTo, relativePoint, xOfs, yOfs
      */
-    GetPoint(index: number): [WowPoint, WowRegion, WowPoint, number, number];
+    GetPoint(index: number): LuaMultiReturn<[WowPoint, WowRegion, WowPoint, number, number]>;
 
     /**
      * Set the parent UIObject
@@ -786,7 +786,7 @@ declare interface WowSlider extends WowFrame {
      * Returns the minimum and maximum values of a slider
      * @tupleReturn
      */
-    GetMinMaxValues(): [number, number];
+    GetMinMaxValues(): LuaMultiReturn<[number, number]>;
 
     /**
      * Get the current value of the slider

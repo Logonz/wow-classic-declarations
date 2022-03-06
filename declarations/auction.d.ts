@@ -94,7 +94,7 @@ declare function CancelSell(): void;
  * @see https://wow.gamepedia.com/API_CanSendAuctionQuery
  * @tupleReturn
  */
-declare function CanSendAuctionQuery(): [boolean, boolean];
+declare function CanSendAuctionQuery(): LuaMultiReturn<[boolean, boolean]>;
 
 /**
  * Cancel the specified auction (on the "owner" list).
@@ -130,7 +130,7 @@ declare function CloseAuctionHouse(): void;
  * @since 5.0.4
  * @tupleReturn
  */
-declare function GetAuctionItemBattlePetInfo(type: AUCTION_TYPE, index: number): [number, number];
+declare function GetAuctionItemBattlePetInfo(type: AUCTION_TYPE, index: number): LuaMultiReturn<[number, number]>;
 
 /**
  * Retrieves info about one item in the current retrieved list of items from the Auction House
@@ -143,7 +143,7 @@ declare function GetAuctionItemBattlePetInfo(type: AUCTION_TYPE, index: number):
  * @tupleReturn
  */
 // tslint:disable-next-line max-line-length
-declare function GetAuctionItemInfo(type: AUCTION_TYPE, index: number): [string, WowTexturePath, number, ITEM_QUALITY, boolean, number, string, number, number, number, number, boolean, string, string, string, AUCTION_SALE_STATUS, number, WowUnknown];
+declare function GetAuctionItemInfo(type: AUCTION_TYPE, index: number): LuaMultiReturn<[string, WowTexturePath, number, ITEM_QUALITY, boolean, number, string, number, number, number, number, boolean, string, string, string, AUCTION_SALE_STATUS, number, WowUnknown]>;
 
 /**
  * Retrieves the itemLink of one item in the current retrieved list of items from the Auction House
@@ -162,7 +162,7 @@ declare function GetAuctionWowItemLink(type: AUCTION_TYPE, index: number): Aucti
  * @returns subClass1, subClass2, subClass3, ...
  * @tupleReturn
  */
-declare function GetAuctionItemSubClasses(categoryIndex: number): [...string[]];
+declare function GetAuctionItemSubClasses(categoryIndex: number): LuaMultiReturn<[...string[]]>;
 
 /**
  * Retrieves the time left for a item in the Auction House
@@ -180,7 +180,7 @@ declare function GetAuctionItemTimeLeft(type: AUCTION_TYPE, index: number): AUCT
  * @see https://wow.gamepedia.com/API_GetAuctionSellItemInfo
  * @tupleReturn
  */
-declare function GetAuctionSellItemInfo(): [string, WowTexturePath, number, ITEM_QUALITY, number, number, number, number];
+declare function GetAuctionSellItemInfo(): LuaMultiReturn<[string, WowTexturePath, number, ITEM_QUALITY, number, number, number, number]>;
 
 /**
  * Unknown

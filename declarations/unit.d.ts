@@ -133,7 +133,7 @@ declare function UnitGUID(unitId: WowUnitId): WowGuid;
  */
 declare function GetPlayerInfoByGUID(
   unitGUID: WowGuid
-): [string, number, string, number, number, string, string];
+): LuaMultiReturn<[string, number, string, number, number, string, string]>;
 
 /**
  * Returns the name and realm of the specified unit
@@ -173,7 +173,7 @@ declare function UnitLevel(unitId: WowUnitId): number;
  * @see https://wow.gamepedia.com/API_UnitFactionGroup
  * @tupleReturn
  */
-declare function UnitFactionGroup(unitId: WowUnitId): [string, string];
+declare function UnitFactionGroup(unitId: WowUnitId): LuaMultiReturn<[string, string]>;
 
 /**
  * Returns the class of the specified unit
@@ -181,7 +181,7 @@ declare function UnitFactionGroup(unitId: WowUnitId): [string, string];
  * @see https://wow.gamepedia.com/API_UnitClass
  * @tupleReturn
  */
-declare function UnitClass(unitId: WowUnitId): [string, string, number];
+declare function UnitClass(unitId: WowUnitId): LuaMultiReturn<[string, string, number]>;
 
 /**
  * Returns the current health of the specified unit

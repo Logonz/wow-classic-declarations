@@ -75,7 +75,7 @@ declare interface GameTooltip {
      * @see http://wowwiki.wikia.com/wiki/API_GameTooltip_GetItem
      * @tupleReturn
      */
-    GetItem(): [string, WowItemLink];
+    GetItem(): LuaMultiReturn<[string, WowItemLink]>;
 
     /**
      * unknown
@@ -90,21 +90,21 @@ declare interface GameTooltip {
      * @see http://wowwiki.wikia.com/wiki/API_GameTooltip_GetSpell
      * @tupleReturn
      */
-    GetSpell(): [string, number];
+    GetSpell(): LuaMultiReturn<[string, number]>;
 
     /**
      * Returns owner frame, anchor
      *
      * @tupleReturn
      */
-    GetOwner(): [WowUiObject, WowPoint];
+    GetOwner(): LuaMultiReturn<[WowUiObject, WowPoint]>;
 
     /**
      * Returns unit name, unit id
      *
      * @tupleReturn
      */
-    GetUnit(): [string, WowUnitId];
+    GetUnit(): LuaMultiReturn<[string, WowUnitId]>;
 
     /**
      * unknown
@@ -163,7 +163,7 @@ declare interface GameTooltip {
      * @see http://wowwiki.wikia.com/wiki/API_GameTooltip_SetBagItem
      * @tupleReturn
      */
-    SetBagItem(bag: WOW_CONTAINER_ID, slot: number): [boolean, number];
+    SetBagItem(bag: WOW_CONTAINER_ID, slot: number): LuaMultiReturn<[boolean, number]>;
 
     /**
      * unknown
@@ -231,7 +231,7 @@ declare interface GameTooltip {
      * @see http://wowwiki.wikia.com/wiki/API_GameTooltip_SetInventoryItem
      * @tupleReturn
      */
-    SetInventoryItem(unit: WowUnitId, slot: number, nameOnly?: WowUnknown): [boolean, boolean, number];
+    SetInventoryItem(unit: WowUnitId, slot: number, nameOnly?: WowUnknown): LuaMultiReturn<[boolean, boolean, number]>;
 
     /**
      * Sets the GameTooltip to show a loot item

@@ -123,7 +123,7 @@ declare function EnableAllAddOns(): void;
  * @see https://wow.gamepedia.com/API_GetAddOnDependencies
  * @tupleReturn
  */
-declare function GetAddOnDependencies(indexOrName: number | string): [...string[]];
+declare function GetAddOnDependencies(indexOrName: number | string): LuaMultiReturn<[...string[]]>;
 
 /**
  * Unknown
@@ -143,7 +143,7 @@ declare function GetAddOnEnableState(character: WowUnknown, addonIndex: WowUnkno
  * @see https://wow.gamepedia.com/API_GetAddOnInfo
  * @tupleReturn
  */
-declare function GetAddOnInfo(indexOrName: number | string): [string, string, string, boolean, ADDON_LOAD_REASON, string, boolean];
+declare function GetAddOnInfo(indexOrName: number | string): LuaMultiReturn<[string, string, string, boolean, ADDON_LOAD_REASON, string, boolean]>;
 
 /**
  * get addon metadata from the toc file
@@ -163,7 +163,7 @@ declare function GetAddOnMetadata(addonNameOrIndex: string | number, field: stri
  * @see https://wow.gamepedia.com/API_GetAddOnOptionalDependencies
  * @tupleReturn
  */
-declare function GetAddOnOptionalDependencies(indexOrName: number | string): [...string[]];
+declare function GetAddOnOptionalDependencies(indexOrName: number | string): LuaMultiReturn<[...string[]]>;
 
 /**
  * Get the number of user supplied AddOns
@@ -181,7 +181,7 @@ declare function GetNumAddOns(): number;
  * @see https://wow.gamepedia.com/API_IsAddOnLoaded
  * @tupleReturn
  */
-declare function IsAddOnLoaded(indexOrName: number | string): [WowFlag, WowFlag];
+declare function IsAddOnLoaded(indexOrName: number | string): LuaMultiReturn<[WowFlag, WowFlag]>;
 
 /**
  * Determine if an AddOn is loaded on demand (via .toc file dependencies or LoadAddOn) rather than at startup
@@ -202,4 +202,4 @@ declare function IsAddOnLoadOnDemand(indexOrName: number | string): WowFlag;
  * @see https://wow.gamepedia.com/API_LoadAddOn
  * @tupleReturn
  */
-declare function LoadAddOn(indexOrName: number | string): [WowFlag, ADDON_LOAD_REASON];
+declare function LoadAddOn(indexOrName: number | string): LuaMultiReturn<[WowFlag, ADDON_LOAD_REASON]>;

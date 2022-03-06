@@ -67,7 +67,7 @@ declare function GetCurrentTitle(): number;
  */
 declare function GetMirrorTimerInfo(
   timerIndex: number
-): [string, number, number, number, WowFlag, string];
+): LuaMultiReturn<[string, number, number, number, WowFlag, string]>;
 
 /**
  * Returns the current value of a mirror timer (fatigue, breath, feign death etc).
@@ -111,7 +111,7 @@ declare function GetRangedCritChance(): number;
  * @see https://wow.gamepedia.com/API_GetRestState
  * @tupleReturn
  */
-declare function GetRestState(): [WowCharacterRestState, string, number];
+declare function GetRestState(): LuaMultiReturn<[WowCharacterRestState, string, number]>;
 
 /**
  * Gets the cooldown information about a Death Knight's Rune
@@ -121,7 +121,7 @@ declare function GetRestState(): [WowCharacterRestState, string, number];
  */
 declare function GetRuneCooldown(
   runeId: WowCharacterDeathkightRuneType
-): [number, number, boolean];
+): LuaMultiReturn<[number, number, boolean]>;
 
 /**
  * Gets the name of the title associated with a title index
@@ -130,7 +130,7 @@ declare function GetRuneCooldown(
  * @see https://wow.gamepedia.com/API_GetTitleName
  * @tupleReturn
  */
-declare function GetTitleName(titleId: number): [string, boolean];
+declare function GetTitleName(titleId: number): LuaMultiReturn<[string, boolean]>;
 
 /**
  * Returns the number of XP gained from killing mobs until "player" goes from rest state to normal state

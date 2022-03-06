@@ -10,7 +10,7 @@ declare type WowBindingSetType = 0 | WowCurrentBindingWhich;
  * @see https://wow.gamepedia.com/API_GetBinding
  * @tupleReturn
  */
-declare function GetBinding(bindingIndex: number, mode?: WowUnknown): [string, string, string];
+declare function GetBinding(bindingIndex: number, mode?: WowUnknown): LuaMultiReturn<[string, string, string]>;
 
 /**
  * Returns the name of the action performed by the specified binding
@@ -29,7 +29,7 @@ declare function GetBindingAction(binding: string, checkOverride?: boolean): str
  * @see https://wow.gamepedia.com/API_GetBindingKey
  * @tupleReturn
  */
-declare function GetBindingKey(command: string): [...string[]];
+declare function GetBindingKey(command: string): LuaMultiReturn<[...string[]]>;
 
 /**
  * Returns the localized string value for the given key and prefix. Essentially a glorified getglobal() function

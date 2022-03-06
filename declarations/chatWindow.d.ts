@@ -79,7 +79,7 @@ declare const WowChatTypeInfo: WowChatTypeInfo;
  * @see https://wow.gamepedia.com/API_GetChatWindowInfo
  * @tupleReturn
  */
-declare function GetChatWindowInfo(frameIndex: number): [string, number, number, number, number, WowFlag, WowFlag, number];
+declare function GetChatWindowInfo(frameIndex: number): LuaMultiReturn<[string, number, number, number, number, WowFlag, WowFlag, number]>;
 
 /**
  * Get the channels received by a chat window.
@@ -87,7 +87,7 @@ declare function GetChatWindowInfo(frameIndex: number): [string, number, number,
  * @see https://wow.gamepedia.com/API_GetChatWindowChannels
  * @tupleReturn
  */
-declare function GetChatWindowChannels(frameIndex: number): [string, number, string, number, string, number];
+declare function GetChatWindowChannels(frameIndex: number): LuaMultiReturn<[string, number, string, number, string, number]>;
 
 /**
  * Blocks further messages from a specified chat channel from appearing in a specific chat frame
@@ -103,7 +103,7 @@ declare function RemoveChatWindowChannel(frameIndex: number, channelName: string
  * @see https://wow.gamepedia.com/API_GetChatWindowMessages
  * @tupleReturn
  */
-declare function GetChatWindowMessages(frameIndex: number): [...string[]];
+declare function GetChatWindowMessages(frameIndex: number): LuaMultiReturn<[...string[]]>;
 
 /**
  * Stops the specified chat window from displaying a specified type of messages
@@ -132,7 +132,7 @@ declare function ChangeChatColor(channelName: string, red: number, green: number
  * @see https://wow.gamepedia.com/API_GetAutoCompleteResults
  * @tupleReturn
  */
-declare function GetAutoCompleteResults(text: string, include: number, exclude: number, maxResults: number, cursorPosition?: number): [...string[]];
+declare function GetAutoCompleteResults(text: string, include: number, exclude: number, maxResults: number, cursorPosition?: number): LuaMultiReturn<[...string[]]>;
 
 /**
  * Return the numeric type index for a specific chat type

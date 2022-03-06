@@ -82,7 +82,7 @@ declare function GetDodgeChance(): number;
  * @see https://wow.gamepedia.com/API_GetExpertise
  * @tupleReturn
  */
-declare function GetExpertise(): [number, number, number];
+declare function GetExpertise(): LuaMultiReturn<[number, number, number]>;
 
 /**
  * Returns the player's haste
@@ -103,7 +103,7 @@ declare function GetHitModifier(): number;
  * @see https://wow.gamepedia.com/API_GetManaRegen
  * @tupleReturn
  */
-declare function GetManaRegen(): [number, number];
+declare function GetManaRegen(): LuaMultiReturn<[number, number]>;
 
 /**
  * Returns the (raw) mastery of the player
@@ -125,7 +125,7 @@ declare function GetMastery(): number;
  * @since 5.0.4
  * @tupleReturn
  */
-declare function GetMasteryEffect(): [number, number];
+declare function GetMasteryEffect(): LuaMultiReturn<[number, number]>;
 
 /**
  * unknown

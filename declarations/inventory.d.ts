@@ -7,7 +7,7 @@
  * @returns start, duration, isEnabled
  * @tupleReturn
  */
-declare function GetInventoryItemCooldown(unit: WowUnitId, slotId: number): [number, number, WowFlag];
+declare function GetInventoryItemCooldown(unit: WowUnitId, slotId: number): LuaMultiReturn<[number, number, WowFlag]>;
 
 /**
  * Return the texture for an inventory item.
@@ -24,4 +24,4 @@ declare function GetInventoryItemTexture(unit: WowUnitId, slotId: number): WowTe
  * @returns slotId, textureName
  * @tupleReturn
  */
-declare function GetInventorySlotInfo(slotName: string): [number, WowTexturePath];
+declare function GetInventorySlotInfo(slotName: string): LuaMultiReturn<[number, WowTexturePath]>;

@@ -13,7 +13,7 @@ declare type WowBookType = typeof BOOKTYPE_SPELL | typeof BOOKTYPE_PET;
  * @returns spellName, spellSubName
  * @tupleReturn
  */
-declare function GetSpellBookItemName(spellId: number, type: WowBookType): [string, string];
+declare function GetSpellBookItemName(spellId: number, type: WowBookType): LuaMultiReturn<[string, string]>;
 
 /**
  * Retrieves the cooldown data of the spell specified.
@@ -22,7 +22,7 @@ declare function GetSpellBookItemName(spellId: number, type: WowBookType): [stri
  * @returns start, duration, enabled, modRate
  * @tupleReturn
  */
-declare function GetSpellCooldown(spellId: number, type: WowBookType): [number, number, WowFlag, number];
+declare function GetSpellCooldown(spellId: number, type: WowBookType): LuaMultiReturn<[number, number, WowFlag, number]>;
 
 /**
  * Returns the icon of the specified spell.

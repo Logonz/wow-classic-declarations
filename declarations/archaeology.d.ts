@@ -96,7 +96,7 @@ declare function CloseResearch(): WowUnknown;
  * @since 4.0.0
  * @tupleReturn
  */
-declare function GetActiveArtifactByRace(raceIndex: number): [string, string, ARCHAELOLOGY_RARITY, WowTexturePath, string, number, WowTexturePath];
+declare function GetActiveArtifactByRace(raceIndex: number): LuaMultiReturn<[string, string, ARCHAELOLOGY_RARITY, WowTexturePath, string, number, WowTexturePath]>;
 
 /**
  * Returns the localized name for Archaeology
@@ -116,7 +116,7 @@ declare function GetArchaeologyInfo(): string;
  * @since 4.0.0
  * @tupleReturn
  */
-declare function GetArchaeologyRaceInfo(raceIndex: number): [string, WowTexturePath, number, number, number, number];
+declare function GetArchaeologyRaceInfo(raceIndex: number): LuaMultiReturn<[string, WowTexturePath, number, number, number, number]>;
 
 /**
  * Returns information about a branch of Archaeology
@@ -127,7 +127,7 @@ declare function GetArchaeologyRaceInfo(raceIndex: number): [string, WowTextureP
  * @since 5.4.0
  * @tupleReturn
  */
-declare function GetArchaeologyRaceInfoByID(branchId: ARCHAELOLOGY_BRANCH): [string, WowTexturePath, number, number, number, number];
+declare function GetArchaeologyRaceInfoByID(branchId: ARCHAELOLOGY_BRANCH): LuaMultiReturn<[string, WowTexturePath, number, number, number, number]>;
 
 /**
  * Returns the information for a specific race's artifact
@@ -140,7 +140,7 @@ declare function GetArchaeologyRaceInfoByID(branchId: ARCHAELOLOGY_BRANCH): [str
  * @tupleReturn
  */
 // tslint:disable-next-line max-line-length
-declare function GetArtifactInfoByRace(raceIndex: number, artifactIndex: number): [string, string, ARCHAELOLOGY_RARITY, WowTexturePath, string, number, WowTexturePath, number, number];
+declare function GetArtifactInfoByRace(raceIndex: number, artifactIndex: number): LuaMultiReturn<[string, string, ARCHAELOLOGY_RARITY, WowTexturePath, string, number, WowTexturePath, number, number]>;
 
 /**
  * Returns the number of Archaeology races in the game
@@ -169,7 +169,7 @@ declare function GetNumArtifactsByRace(raceIndex: number): number;
  * @since 4.0.0
  * @tupleReturn
  */
-declare function GetSelectedArtifactInfo(): [string, string, ARCHAELOLOGY_RARITY, WowTexturePath, string, number, WowTexturePath, number];
+declare function GetSelectedArtifactInfo(): LuaMultiReturn<[string, string, ARCHAELOLOGY_RARITY, WowTexturePath, string, number, WowTexturePath, number]>;
 
 /**
  * Returns information about current used fragments for the selected artifact
@@ -179,7 +179,7 @@ declare function GetSelectedArtifactInfo(): [string, string, ARCHAELOLOGY_RARITY
  * @since 4.0.0
  * @tupleReturn
  */
-declare function GetArtifactProgress(): [number, number, number];
+declare function GetArtifactProgress(): LuaMultiReturn<[number, number, number]>;
 
 /**
  * Unknown

@@ -48,7 +48,7 @@ declare function ForceGossip(): WowFlag;
  * @description The number of returned values per quest has increased again to 6
  * @tupleReturn
  */
-declare function GetGossipActiveQuests(): [string, string, boolean, boolean, boolean];
+declare function GetGossipActiveQuests(): LuaMultiReturn<[string, string, boolean, boolean, boolean]>;
 
 /**
  * Returns a list of available quests from an NPC
@@ -57,7 +57,7 @@ declare function GetGossipActiveQuests(): [string, string, boolean, boolean, boo
  * @see https://wow.gamepedia.com/API_GetGossipAvailableQuests
  * @tupleReturn
  */
-declare function GetGossipAvailableQuests(): [string, number, boolean, QUEST_FREQUENCY, boolean, boolean, boolean];
+declare function GetGossipAvailableQuests(): LuaMultiReturn<[string, number, boolean, QUEST_FREQUENCY, boolean, boolean, boolean]>;
 
 /**
  * Get the available gossip items on an NPC (possibly stuff like the BWL and MC orbs too).
@@ -66,7 +66,7 @@ declare function GetGossipAvailableQuests(): [string, number, boolean, QUEST_FRE
  * @see https://wow.gamepedia.com/API_GetGossipOptions
  * @tupleReturn
  */
-declare function GetGossipOptions(): [string, GOSSIP_TYPE];
+declare function GetGossipOptions(): LuaMultiReturn<[string, GOSSIP_TYPE]>;
 
 /**
  * Get the gossip text

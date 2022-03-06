@@ -95,7 +95,7 @@ declare function GetBagName(bagId: WOW_CONTAINER_ID): string;
  * @see https://wow.gamepedia.com/API_GetContainerItemCooldown
  * @tupleReturn
  */
-declare function GetContainerItemCooldown(bagId: WOW_CONTAINER_ID, slot: number): [number, number, WowFlag];
+declare function GetContainerItemCooldown(bagId: WOW_CONTAINER_ID, slot: number): LuaMultiReturn<[number, number, WowFlag]>;
 
 /**
  * Returns current and maximum durability of an item in the character's bags
@@ -106,7 +106,7 @@ declare function GetContainerItemCooldown(bagId: WOW_CONTAINER_ID, slot: number)
  * @see https://wow.gamepedia.com/API_GetContainerItemDurability
  * @tupleReturn
  */
-declare function GetContainerItemDurability(bagId: WOW_CONTAINER_ID, slot: number): [number, number];
+declare function GetContainerItemDurability(bagId: WOW_CONTAINER_ID, slot: number): LuaMultiReturn<[number, number]>;
 
 /**
  * Returns the item id of the item in a particular container slot.
@@ -128,7 +128,7 @@ declare function GetContainerItemID(bagId: WOW_CONTAINER_ID, slot: number): numb
  * @tupleReturn
  */
 // tslint:disable-next-line max-line-length
-declare function GetContainerItemInfo(bagId: WOW_CONTAINER_ID, slot: number): [WowTexturePath, number, boolean, ITEM_QUALITY, boolean, boolean, WowItemLink, boolean, boolean, number];
+declare function GetContainerItemInfo(bagId: WOW_CONTAINER_ID, slot: number): LuaMultiReturn<[WowTexturePath, number, boolean, ITEM_QUALITY, boolean, boolean, WowItemLink, boolean, boolean, number]>;
 
 /**
  * Returns a link of the object located in the specified slot of a specified bag
@@ -158,7 +158,7 @@ declare function GetContainerNumSlots(bagId: WOW_CONTAINER_ID): number;
  * @see https://wow.gamepedia.com/API_GetContainerItemQuestInfo
  * @tupleReturn
  */
-declare function GetContainerItemQuestInfo(bagId: WOW_CONTAINER_ID, slot: number): [WowFlag, number | null, WowFlag];
+declare function GetContainerItemQuestInfo(bagId: WOW_CONTAINER_ID, slot: number): LuaMultiReturn<[WowFlag, number | null, WowFlag]>;
 
 /**
  * Returns the total number of free slots in the bag an the type of items that can go into it specified by the index
@@ -168,7 +168,7 @@ declare function GetContainerItemQuestInfo(bagId: WOW_CONTAINER_ID, slot: number
  * @see https://wow.gamepedia.com/API_GetContainerNumFreeSlots
  * @tupleReturn
  */
-declare function GetContainerNumFreeSlots(bagId: WOW_CONTAINER_ID): [number, BAG_TYPE];
+declare function GetContainerNumFreeSlots(bagId: WOW_CONTAINER_ID): LuaMultiReturn<[number, BAG_TYPE]>;
 
 /**
  * Open all bag frames

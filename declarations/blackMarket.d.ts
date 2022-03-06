@@ -20,7 +20,7 @@ interface C_BlackMarket {
      * @tupleReturn
      */
     // tslint:disable-next-line max-line-length
-    GetItemInfoByID(marketId: number): [string, WowTexturePath, number, string, number, string, string, number, number, number, boolean, number, number, WowItemLink, number];
+    GetItemInfoByID(marketId: number): LuaMultiReturn<[string, WowTexturePath, number, string, number, string, string, number, number, number, boolean, number, number, WowItemLink, number]>;
 
     /**
      * Returns information about a specific black market auction
@@ -30,7 +30,7 @@ interface C_BlackMarket {
      * @see https://wow.gamepedia.com/API_C_BlackMarket.GetItemInfoByID
      * @tupleReturn
      */
-    GetHotItem(): [string, WowTexturePath, number, string, number, string, string, number, number, number, boolean, number, number, WowItemLink, number];
+    GetHotItem(): LuaMultiReturn<[string, WowTexturePath, number, string, number, string, string, number, number, number, boolean, number, number, WowItemLink, number]>;
 
     /**
      * Returns information about a specific black market auction
@@ -42,7 +42,7 @@ interface C_BlackMarket {
      * @tupleReturn
      */
     // tslint:disable-next-line max-line-length
-    GetItemInfoByIndex(index: number): [string, WowTexturePath, number, string, number, string, string, number, number, number, boolean, number, number, WowItemLink, number];
+    GetItemInfoByIndex(index: number): LuaMultiReturn<[string, WowTexturePath, number, string, number, string, string, number, number, number, boolean, number, number, WowItemLink, number]>;
 
     /**
      * Returns the number of auctions on the Black Market Auction House

@@ -117,7 +117,7 @@ declare function GetContainerItemLink(
  */
 declare function GetDetailedItemLevelInfo(
   itemIdentifier: string | number | WowItemLink
-): [number, boolean, number];
+): LuaMultiReturn<[number, boolean, number]>;
 
 /**
  * Returns cooldown information for the item
@@ -129,7 +129,7 @@ declare function GetDetailedItemLevelInfo(
  * @see https://wow.gamepedia.com/API_GetItemCooldown
  * @tupleReturn
  */
-declare function GetItemCooldown(itemId: number): [number, number, WowFlag];
+declare function GetItemCooldown(itemId: number): LuaMultiReturn<[number, number, WowFlag]>;
 
 /**
  * Returns count information for the item
@@ -193,7 +193,7 @@ declare function GetItemIcon(itemId: number): WowTexturePath;
 // tslint:disable-next-line max-line-length
 declare function GetItemInfo(
   itemIdentifier: string | number | WowItemLink
-): [
+): LuaMultiReturn<[
   string,
   WowItemLink,
   ITEM_QUALITY,
@@ -211,7 +211,7 @@ declare function GetItemInfo(
   number,
   number,
   boolean
-];
+]>;
 
 /**
  * Returns instantly-available information about a specific item
@@ -236,7 +236,7 @@ declare function GetItemInfo(
 // tslint:disable-next-line max-line-length
 declare function GetItemInfoInstant(
   itemIdentifier: string | number | WowItemLink
-): [
+): LuaMultiReturn<[
   number,
   string,
   string,
@@ -244,7 +244,7 @@ declare function GetItemInfoInstant(
   WowTexturePath,
   number,
   number
-];
+]>;
 
 /**
  * Returns RGB color codes for an item quality
@@ -259,7 +259,7 @@ declare function GetItemInfoInstant(
  */
 declare function GetItemQualityColor(
   quality: ITEM_QUALITY
-): [number, number, number, string];
+): LuaMultiReturn<[number, number, number, string]>;
 
 /**
  * Return spell information about a specific item
@@ -273,7 +273,7 @@ declare function GetItemQualityColor(
  */
 declare function GetItemSpell(
   itemIdentifier: string | number | WowItemLink
-): [string, number];
+): LuaMultiReturn<[string, number]>;
 
 /**
  * Returns a table of stats for an item
@@ -361,7 +361,7 @@ declare function GetTradeTargetItemLink(tradeIndex: number): WowItemLink;
  */
 declare function IsUsableItem(
   itemIdentifier: string | number | WowItemLink
-): [boolean, boolean];
+): LuaMultiReturn<[boolean, boolean]>;
 
 /**
  * Returns whether an item is consumed when used
@@ -418,7 +418,7 @@ declare function IsEquippedItemType(itemType: WowEquippableItemType): boolean;
 declare function IsItemInRange(
   itemIdentifier: string | number | WowItemLink,
   unit?: WowUnitId
-): [boolean, WowFlag];
+): LuaMultiReturn<[boolean, WowFlag]>;
 
 /**
  * unknown

@@ -99,7 +99,7 @@ declare function DisplayChannelOwner(channelName: string): void;
  * @see https://wow.gamepedia.com/API_EnumerateServerChannels
  * @tupleReturn
  */
-declare function EnumerateServerChannels(): [...string[]];
+declare function EnumerateServerChannels(): LuaMultiReturn<[...string[]]>;
 
 /**
  * Retrieves joined channels
@@ -108,7 +108,7 @@ declare function EnumerateServerChannels(): [...string[]];
  * @tupleReturn
  */
 // tslint:disable-next-line max-line-length
-declare function GetChannelList(): [number, string, boolean, number, string, boolean, number, string, boolean, number, string, boolean, number, string, boolean, number, string, boolean];
+declare function GetChannelList(): LuaMultiReturn<[number, string, boolean, number, string, boolean, number, string, boolean, number, string, boolean, number, string, boolean, number, string, boolean]>;
 
 /**
  * Returns information about the specified channel
@@ -119,7 +119,7 @@ declare function GetChannelList(): [number, string, boolean, number, string, boo
  * @see https://wow.gamepedia.com/API_GetChannelName
  * @tupleReturn
  */
-declare function GetChannelName(channelIdOrName: number | string): [number, string, number];
+declare function GetChannelName(channelIdOrName: number | string): LuaMultiReturn<[number, string, number]>;
 
 /**
  * Get the channels received by a chat window
@@ -129,7 +129,7 @@ declare function GetChannelName(channelIdOrName: number | string): [number, stri
  * @tupleReturn
  */
 // tslint:disable-next-line max-line-length
-declare function GetChatWindowChannels(frameId: number): [string, number, string, number, string, number, string, number, string, number, string, number, string, number];
+declare function GetChatWindowChannels(frameId: number): LuaMultiReturn<[string, number, string, number, string, number, string, number, string, number, string, number, string, number]>;
 
 /**
  * Joins the channel with the specified name. A player can be in a maximum of 10 chat channels. In opposite to API_JoinTemporaryChannel
@@ -143,7 +143,7 @@ declare function GetChatWindowChannels(frameId: number): [string, number, string
  *  - The name of the channel (Ohklus: seems to be nil for most channels)
  * @see https://wow.gamepedia.com/API_JoinChannelByName
  */
-declare function JoinChannelByName(channelName: string, password?: string, frameId?: number, hasVoice?: boolean): [number, string];
+declare function JoinChannelByName(channelName: string, password?: string, frameId?: number, hasVoice?: boolean): LuaMultiReturn<[number, string]>;
 
 /**
  * Joins the channel with the specified name. A player can be in a maximum of 10 chat channels. In opposite to API_JoinTemporaryChannel
@@ -158,7 +158,7 @@ declare function JoinChannelByName(channelName: string, password?: string, frame
  * @see https://wow.gamepedia.com/API_JoinPermanentChannel
  * @tupleReturn
  */
-declare function JoinPermanentChannel(channelName: string, password?: string, frameId?: number, hasVoice?: boolean): [number, string];
+declare function JoinPermanentChannel(channelName: string, password?: string, frameId?: number, hasVoice?: boolean): LuaMultiReturn<[number, string]>;
 
 /**
  * Joins the channel with the specified name. A player can be in a maximum of 10 chat channels. In opposite to API_JoinPermanentChannel
@@ -173,7 +173,7 @@ declare function JoinPermanentChannel(channelName: string, password?: string, fr
  * @see https://wow.gamepedia.com/API_JoinTemporaryChannel
  * @tupleReturn
  */
-declare function JoinTemporaryChannel(channelName: string, password?: string, frameId?: number, hasVoice?: boolean): [number, string];
+declare function JoinTemporaryChannel(channelName: string, password?: string, frameId?: number, hasVoice?: boolean): LuaMultiReturn<[number, string]>;
 
 /**
  * Leaves the channel with the specified name

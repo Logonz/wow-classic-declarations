@@ -27,7 +27,7 @@ declare function forceinsecure(): void;
  * @see https://wow.gamepedia.com/API_issecurevariable
  * @tupleReturn
  */
-declare function issecurevariable(table?: object, variableName?: string): [boolean, string];
+declare function issecurevariable(table?: object, variableName?: string): LuaMultiReturn<[boolean, string]>;
 
 /**
  * Calls the specified function without propagating taint to the caller

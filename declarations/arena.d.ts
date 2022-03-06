@@ -18,7 +18,7 @@ declare type ARENA_ID = ARENA_ID_2VS2 | ARENA_ID_3VS3;
  * @see https://wow.gamepedia.com/API_GetBattlefieldTeamInfo
  * @tupleReturn
  */
-declare function GetBattlefieldTeamInfo(index: ARENA_TEAM): [string, number, number, number];
+declare function GetBattlefieldTeamInfo(index: ARENA_TEAM): LuaMultiReturn<[string, number, number, number]>;
 
 /**
  * Returns the current arena season. Returns 0 when there is no active season
@@ -42,7 +42,7 @@ declare function GetPreviousArenaSeason(): WowUnknown;
  * @see https://wow.gamepedia.com/API_IsActiveBattlefieldArena
  * @tupleReturn
  */
-declare function IsActiveBattlefieldArena(): [boolean, boolean];
+declare function IsActiveBattlefieldArena(): LuaMultiReturn<[boolean, boolean]>;
 
 /**
  * Returns a value based on whether the player is the arena team captain

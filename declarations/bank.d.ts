@@ -28,4 +28,4 @@ declare function GetBankSlotCost(numSlot: number): number;
  * @see https://wow.gamepedia.com/API_GetNumBankSlots
  * @tupleReturn
  */
-declare function GetNumBankSlots(): [number, WowFlag];
+declare function GetNumBankSlots(): LuaMultiReturn<[number, WowFlag]>;

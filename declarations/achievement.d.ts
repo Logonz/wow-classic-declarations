@@ -46,7 +46,7 @@ declare function GetAchievementCategory(achivementId: number): number;
  * @see https://wow.gamepedia.com/API_GetAchievementComparisonInfo
  * @tupleReturn
  */
-declare function GetAchievementComparisonInfo(achivementId: number): [boolean, number, number, number];
+declare function GetAchievementComparisonInfo(achivementId: number): LuaMultiReturn<[boolean, number, number, number]>;
 
 /**
  * Returns information about the given Achievement's specified criteria
@@ -57,7 +57,7 @@ declare function GetAchievementComparisonInfo(achivementId: number): [boolean, n
  * @tupleReturn
  */
 // tslint:disable-next-line max-line-length
-declare function GetAchievementCriteriaInfo(achivementId: number, criteriaIndex: number): [string, number, boolean, number, number, string, number, number, string, number, boolean];
+declare function GetAchievementCriteriaInfo(achivementId: number, criteriaIndex: number): LuaMultiReturn<[string, number, boolean, number, number, string, number, number, string, number, boolean]>;
 
 /**
  * Returns information about the given Achievement's specified criteria
@@ -67,7 +67,7 @@ declare function GetAchievementCriteriaInfo(achivementId: number, criteriaIndex:
  * @see https://wow.gamepedia.com/API_GetAchievementCriteriaInfoByID
  */
 // tslint:disable-next-line max-line-length
-declare function GetAchievementCriteriaInfoByID(achivementId: number, criteriaId: number): [string, number, boolean, number, string, number, number, string, number, boolean];
+declare function GetAchievementCriteriaInfoByID(achivementId: number, criteriaId: number): LuaMultiReturn<[string, number, boolean, number, string, number, number, string, number, boolean]>;
 
 /**
  * Returns information about the given Achievement
@@ -78,9 +78,9 @@ declare function GetAchievementCriteriaInfoByID(achivementId: number, criteriaId
  * @tupleReturn
  */
 // tslint:disable-next-line max-line-length
-declare function GetAchievementInfo(achivementId: number, index: number): [number, string, number, boolean, number, number, number, string, number, number, string, boolean, boolean, string];
+declare function GetAchievementInfo(achivementId: number, index: number): LuaMultiReturn<[number, string, number, boolean, number, number, number, string, number, number, string, boolean, boolean, string]>;
 // tslint:disable-next-line max-line-length
-declare function GetAchievementInfo(categoryId: number, index: number): [number, string, number, boolean, number, number, number, string, number, number, string, boolean, boolean, string];
+declare function GetAchievementInfo(categoryId: number, index: number): LuaMultiReturn<[number, string, number, boolean, number, number, number, string, number, number, string, boolean, boolean, string]>;
 
 /**
  * Returns a achievementLink for the specified Achievement
@@ -105,7 +105,7 @@ declare function GetAchievementNumCriteria(achivementId: number): number;
  * @see https://wow.gamepedia.com/API_GetCategoryInfo
  * @tupleReturn
  */
-declare function GetCategoryInfo(categoryId: number): [string, number, number];
+declare function GetCategoryInfo(categoryId: number): LuaMultiReturn<[string, number, number]>;
 
 /**
  * Returns the list of Achievement categories
@@ -123,7 +123,7 @@ declare function GetCategoryList(): number[];
  * @see https://wow.gamepedia.com/API_GetCategoryNumAchievements
  * @tupleReturn
  */
-declare function GetCategoryNumAchievements(categoryId: number, includeAll?: boolean): [number, number, number];
+declare function GetCategoryNumAchievements(categoryId: number, includeAll?: boolean): LuaMultiReturn<[number, number, number]>;
 
 /**
  * Return the value of the requested Statistic from the comparison unit
@@ -159,7 +159,7 @@ declare function GetNextAchievement(achivementId: number): number | null;
  * @param achivementId ID of the achievement to retrieve information for
  * @see https://wow.gamepedia.com/API_GetNumComparisonCompletedAchievements
  */
-declare function GetNumComparisonCompletedAchievements(achivementId: number): [number, number];
+declare function GetNumComparisonCompletedAchievements(achivementId: number): LuaMultiReturn<[number, number]>;
 
 /**
  * Return the total number of Achievements, and number completed
@@ -167,7 +167,7 @@ declare function GetNumComparisonCompletedAchievements(achivementId: number): [n
  * @see https://wow.gamepedia.com/API_GetNumCompletedAchievements
  * @tupleReturn
  */
-declare function GetNumCompletedAchievements(): [number, number];
+declare function GetNumCompletedAchievements(): LuaMultiReturn<[number, number]>;
 
 /**
  * Returns the number of achievements that match the search string specified calling SetAchievementSearchString
@@ -220,7 +220,7 @@ declare function GetTotalAchievementPoints(): number;
  * @since 3.0.2
  * @tupleReturn
  */
-declare function GetTrackedAchievements(): [number, number, number, number, number, number, number, number, number, number];
+declare function GetTrackedAchievements(): LuaMultiReturn<[number, number, number, number, number, number, number, number, number, number]>;
 
 /**
  * Returns the total number of tracked achievements

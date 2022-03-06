@@ -71,7 +71,7 @@ declare function GetActionBarPage(): ActionBarPage;
  * @see https://wow.gamepedia.com/API_GetActionBarToggles
  * @tupleReturn
  */
-declare function GetActionBarToggles(): [boolean, boolean, boolean, boolean];
+declare function GetActionBarToggles(): LuaMultiReturn<[boolean, boolean, boolean, boolean]>;
 
 /**
  * Returns information about the charges of a charge-accumulating player ability
@@ -81,7 +81,7 @@ declare function GetActionBarToggles(): [boolean, boolean, boolean, boolean];
  * @see https://wow.gamepedia.com/API_GetActionCharges
  * @tupleReturn
  */
-declare function GetActionCharges(slotId: ActionBarSlotId): [number, number, number, number, number];
+declare function GetActionCharges(slotId: ActionBarSlotId): LuaMultiReturn<[number, number, number, number, number]>;
 
 /**
  * Retrieves the cooldown data of the action specified
@@ -91,7 +91,7 @@ declare function GetActionCharges(slotId: ActionBarSlotId): [number, number, num
  * @see https://wow.gamepedia.com/API_GetActionCooldown
  * @tupleReturn
  */
-declare function GetActionCooldown(slotId: ActionBarSlotId): [number, number, number, number];
+declare function GetActionCooldown(slotId: ActionBarSlotId): LuaMultiReturn<[number, number, number, number]>;
 
 /**
  * Gets the available count for an action, if applicable
@@ -111,7 +111,7 @@ declare function GetActionCount(slotId: ActionBarSlotId): string | number;
  * @see https://wow.gamepedia.com/API_GetActionInfo
  * @tupleReturn
  */
-declare function GetActionInfo(slotId: ActionBarSlotId): [string, WowUnknown, WowUnknown];
+declare function GetActionInfo(slotId: ActionBarSlotId): LuaMultiReturn<[string, WowUnknown, WowUnknown]>;
 
 /**
  * Gets the text label for an action
@@ -222,7 +222,7 @@ declare function IsEquippedAction(slotId: ActionBarSlotId): WowFlag | null;
  * @see https://wow.gamepedia.com/API_IsUsableAction
  * @tupleReturn
  */
-declare function IsUsableAction(slotId: ActionBarSlotId): [boolean, boolean];
+declare function IsUsableAction(slotId: ActionBarSlotId): LuaMultiReturn<[boolean, boolean]>;
 
 /**
  * Determine if player has a pet with an action bar.

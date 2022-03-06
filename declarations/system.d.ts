@@ -22,7 +22,7 @@ declare function DetectWowMouse(): WowUnknown;
  * @see https://wow.gamepedia.com/API_GetBuildInfo
  * @tupleReturn
  */
-declare function GetBuildInfo(): [string, string, string, number];
+declare function GetBuildInfo(): LuaMultiReturn<[string, string, string, number]>;
 
 /**
  * Returns the currently set error handler
@@ -47,7 +47,7 @@ declare function GetFramerate(): number;
  * @see https://wow.gamepedia.com/API_GetGameTime
  * @tupleReturn
  */
-declare function GetGameTime(): [number, number];
+declare function GetGameTime(): LuaMultiReturn<[number, number]>;
 
 /**
  * Returns the system uptime of your computer in seconds, with millisecond

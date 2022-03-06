@@ -41,7 +41,7 @@ declare function DismissCompanion(type: WowCompanionType): void;
  * @since 3.0.2
  * @tupleReturn
  */
-declare function GetCompanionInfo(type: WowCompanionType, companionIndex: number): [number, string, number, WowTexturePath, WowFlag, WowMointType];
+declare function GetCompanionInfo(type: WowCompanionType, companionIndex: number): LuaMultiReturn<[number, string, number, WowTexturePath, WowFlag, WowMointType]>;
 
 /**
  * Returns the number of companions you have
