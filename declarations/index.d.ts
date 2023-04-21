@@ -49,3 +49,9 @@ import "./ui/tooltip";
 // U
 import "./ui/ui";
 import "./unit";
+
+// Folders
+// C_* classes
+import "./classes";
+// SharedXML
+import "./sharedXML";
