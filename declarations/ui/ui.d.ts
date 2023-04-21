@@ -16,7 +16,7 @@ declare type WowAlign = "HORIZONTAL" | "VERTICAL";
 /**
  * global lua namespace
  */
-declare const _G: { [prop: string]: any };
+// declare const _G: { [prop: string]: any }; // This is implemented by the lua-types default lib
 declare const InterfaceOptionsFramePanelContainer: WowRegion;
 declare const UIParent: WowFrame;
 
