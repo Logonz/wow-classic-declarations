@@ -1,3 +1,5 @@
+/** @noSelfInFile **/
+
 declare interface QuestObjectiveInfo {
   text: string;
   type: string;

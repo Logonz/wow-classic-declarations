@@ -1,3 +1,5 @@
+/** @noSelfInFile **/
+
 declare interface WowTimer {
   Cancel: () => void;
   IsCancelled: () => boolean;
@@ -26,5 +28,5 @@ declare namespace C_Timer {
    * @return Ticker
    * @see https://www.townlong-yak.com/framexml/live/C_TimerAugment.lua
    */
-  function NewTimer(duration: number, callback: () => void): WowTimer;
+  function After(duration: number, callback: () => void): WowTimer;
 }

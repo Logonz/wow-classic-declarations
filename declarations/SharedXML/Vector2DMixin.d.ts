@@ -127,6 +127,7 @@ declare interface Vector2DMixin {
  * @param y - The y component of the vector.
  * @returns A new vector with the given x and y components.
  * @see https://www.townlong-yak.com/framexml/go/CreateVector2D
+ * @noSelf
  */
 declare function CreateVector2D(x: number, y: number): Vector2DMixin;
 
@@ -136,6 +137,7 @@ declare function CreateVector2D(x: number, y: number): Vector2DMixin;
  * @param right - The second vector to compare.
  * @returns True if the vectors are equal, false otherwise.
  * @see https://www.townlong-yak.com/framexml/go/AreVector2DEqual
+ * @noSelf
  */
 declare function AreVector2DEqual(
   left: Vector2DMixin,
