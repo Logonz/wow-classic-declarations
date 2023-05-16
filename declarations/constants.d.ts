@@ -164,3 +164,10 @@ declare const DIFFICULTY_PRIMARYRAID_MYTHIC = 16;
 declare const DIFFICULTY_PRIMARYRAID_LFR = 17;
 
 declare const NUM_CHAT_WINDOWS: number;
+
+
+/**
+ * Global object used to register and assign handler functions to for slash commands.
+ * @see https://wowpedia.fandom.com/wiki/Creating_a_slash_command
+ */
+declare const SlashCmdList: { [key: string]: (this: void, msg: string, editBox: WowEditBox) => void };

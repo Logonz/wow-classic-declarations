@@ -174,61 +174,67 @@ declare interface WowUiObject {
  * This doesn't have a direct correlation to a UI object. See FontInstance object information for details.
  */
 declare interface WowFontInstance extends WowUiObject {
+  /**
+   * Returns detailed information on a font object.
+   * @returns MultipleReturnValues:
+   *  - **fontName**: Path to font file
+   *  - **fontHeight**: Font height in pixels. Due to internal graphics engine workings, this will be ridiculously close to an integer number,
+   *  but not quite ever fully.
+   *  - **fontFlags**: See FontInstance:SetFont().
+   * @tupleReturn
+   */
+  GetFont(): LuaMultiReturn<[string, number, string]>;
 
-    /**
-     * Returns detailed information on a font object.
-     * @returns MultipleReturnValues:
-     *  - **fontName**: Path to font file
-     *  - **fontHeight**: Font height in pixels. Due to internal graphics engine workings, this will be ridiculously close to an integer number,
-     *  but not quite ever fully.
-     *  - **fontFlags**: See FontInstance:SetFont().
-     * @tupleReturn
-     */
-    GetFont(): LuaMultiReturn<[string, number, string]>;
+  /**
+   * Gets the text color of of a Font Instance.
+   * @return MultipleReturnValues:
+   *  r: The red color
+   *  g: The green color
+   *  b: The blue color
+   *  a?: the alpha (opacity)
+   * @tupleReturn
+   */
+  GetTextColor(): LuaMultiReturn<[number, number, number, number?]>;
 
-    /**
-     * Gets the text color of of a Font Instance.
-     * @return MultipleReturnValues:
-     *  r: The red color
-     *  g: The green color
-     *  b: The blue color
-     *  a?: the alpha (opacity)
-     * @tupleReturn
-     */
-    GetTextColor(): LuaMultiReturn<[number, number, number, number?]>;
+  /**
+   * The function is used to set the font to use for displaying text.
+   *
+   * @param font path to the font file, relative to the WoW base directory.
+   * @param size size in points.
+   * @param flags any comma-delimited combination of "OUTLINE", "THICKOUTLINE" and "MONOCHROME".
+   */
+  SetFont(font: string, size: number, flags?: FontInstanceFlags): void;
 
-    /**
-     * The function is used to set the font to use for displaying text.
-     *
-     * @param font path to the font file, relative to the WoW base directory.
-     * @param size size in points.
-     * @param flags any comma-delimited combination of "OUTLINE", "THICKOUTLINE" and "MONOCHROME".
-     */
-    SetFont(font: string, size: number, flags?: FontInstanceFlags): void;
+  /**
+   * Sets horizontal text justification
+   *
+   * @param align the new align
+   */
+  SetJustifyH(align: WowHorizontalAlign): void;
 
-    /**
-     * Sets horizontal text justification
-     *
-     * @param align the new align
-     */
-    SetJustifyH(align: WowHorizontalAlign): void;
+  /**
+   * Sets vertical text justification
+   *
+   * @param align the new align
+   */
+  SetJustifyV(align: WowVerticalAlign): void;
 
-    /**
-     * Sets vertical text justification
-     *
-     * @param align the new align
-     */
-    SetJustifyV(align: WowVerticalAlign): void;
+  /**
+   * Sets the default text color.
+   *
+   * @param r red color
+   * @param g green color
+   * @param b blue color
+   * @param a alpha (opacity)
+   */
+  SetTextColor(r: number, g: number, b: number, a?: number): void;
 
-    /**
-     * Sets the default text color.
-     *
-     * @param r red color
-     * @param g green color
-     * @param b blue color
-     * @param a alpha (opacity)
-     */
-    SetTextColor(r: number, g: number, b: number, a?: number): void;
+  /**
+   * Sets if the text should be word wrapped.
+   *
+   * @param wrap the new wrap value
+   */
+  SetWordWrap(wrap: Boolean): void;
 }
 
 /**
@@ -480,6 +486,11 @@ declare interface WowFontString extends WowFontInstance, WowLayeredRegion {
      * @see https://wow.gamepedia.com/API_FontString_GetStringWidth
      */
     GetStringWidth(): number;
+
+    /**
+     * Should the text be wrapped to multiple lines when its width exceeds the width of the FontString?
+     */
+    SetWordWrap(wrap: boolean): void;
 }
 
 /**
