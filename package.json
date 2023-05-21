@@ -12,7 +12,7 @@
   ],
   "license": "MIT",
   "main": "declarations/index.d.ts",
-  "name": "@chrisd08/wow-classic-declarations",
+  "name": "@logonz/wow-classic-declarations",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "postversion": "git push github --follow-tags",
